@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     this.submitted = true;
-    console.log(this.loginform);
     if(this.loginform.status === 'VALID') {
       localStorage.setItem("username", this.loginform.value.email);
       const user: string = this.loginform.value.email;

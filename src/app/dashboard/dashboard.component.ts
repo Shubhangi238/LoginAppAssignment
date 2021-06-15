@@ -34,8 +34,8 @@ export class DashboardComponent implements OnInit {
     this.userStore.dispatch(new GetUser());
     this.users = this.userStore.select(getUsers);
     this.userStore.select(getUsers).subscribe(data => this.userData = data);
-    this.email = this.userData[0].user;
-    this.username = this.email.substring(0, this.email.indexOf('@'));
+    this.email = this.userData[0]?.user;
+    this.username = this.email?.substring(0, this.email.indexOf('@'));
     this.employees = [{
       name: this.username,
       profile: 'Developer',
