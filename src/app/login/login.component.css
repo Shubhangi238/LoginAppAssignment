@@ -4,7 +4,7 @@
 
 .form-group-padding {
     padding: 10px;
-    
+    border: none;
 }
 
 .form-margin {
@@ -12,7 +12,7 @@
 }
 
 .is-invalid {
-    color: #dc3545;
+    color: white;
     margin-top: -20px;
 }
 
@@ -24,3 +24,28 @@
     border: none;
     margin-top: 80px;
 }
+
+.lg-btn{
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.header {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+button:active{
+    border: none;
+    outline: none;
+}
+
+button:click{
+    border: none;
+    outline: none;
+}
+

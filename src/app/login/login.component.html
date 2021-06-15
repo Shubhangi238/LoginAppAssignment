@@ -1,8 +1,8 @@
 <div
-  class="jumbotron h-screen w-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center p-4"
+  class="jumbotron h-screen w-full bg-gradient-to-br from-green-300 to-blue-600 flex items-center justify-center p-4"
 >
   <div class="container">
-    <h1>Login App</h1>
+    <h1 class="header">Login App</h1>
 
   <form [formGroup]="loginform" (ngSubmit)="onLogin()">
       <div class="form-group form-margin">
@@ -24,7 +24,7 @@
       </div>
           
       <div class="form-group form-margin">
-        <button type="submit" class="btn btn-primary form-group-padding" style="width: 100%" > LOGIN </button>
+        <button type="submit" class="lg-btn form-group-padding"> LOGIN </button>
       </div>
 
   </form>
