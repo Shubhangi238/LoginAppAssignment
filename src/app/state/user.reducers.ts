@@ -1,6 +1,6 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { User } from '../login/login.component';
-import { UserActions, UserActionTypes } from './todo.actions';
+import { UserActions, UserActionTypes } from './user.actions';
 
 export interface UserState extends EntityState<User> {
   loading: boolean;

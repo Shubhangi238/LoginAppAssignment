@@ -8,11 +8,9 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { TodoEffects } from './state/todo.effects';
-import { userReducer } from './state/todo.reducers';
-import { TodoService } from './todo.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
+import { UserEffects } from './state/user.effects';
+import { userReducer } from './state/user.reducers';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [AppComponent, routingComponents],
@@ -22,13 +20,13 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({ users: userReducer }),
-    EffectsModule.forRoot([TodoEffects]),
+    EffectsModule.forRoot([UserEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
   ],
-  providers: [TodoService],
+  providers: [UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

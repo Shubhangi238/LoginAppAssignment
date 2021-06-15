@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { userAdapter, UserState } from './todo.reducers';
+import { userAdapter, UserState } from './user.reducers';
 
 const userFeatureSelector = createFeatureSelector<UserState>('users');
 

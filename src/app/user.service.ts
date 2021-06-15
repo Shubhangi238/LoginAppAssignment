@@ -5,25 +5,25 @@ import { User } from './login/login.component';
 @Injectable({
   providedIn: 'root',
 })
-export class TodoService {
-  private todos: User[] = [];
+export class UserService {
+  private users: User[] = [];
 
   constructor() {}
 
   getUsers(): Observable<User[]> {
-    return of(this.todos);
+    return of(this.users);
   }
 
   async addUser(user: string): Promise<void> {
-    const newTodo: User = {
-      id: this.todos.length,
+    const newUser: User = {
+      id: this.users.length,
       user: user
     };
 
-    this.todos = [...this.todos, newTodo];
+    this.users = [...this.users, newUser];
   }
 
   async deleteUser(id: number): Promise<void> {
-    this.todos = this.todos.filter((val) => val.id !== id);
+    this.users = this.users.filter((val) => val.id !== id);
   }
 }

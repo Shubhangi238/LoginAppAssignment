@@ -6,9 +6,9 @@ import {
   AddUser,
   DeleteUser,
   GetUser,
-} from '../state/todo.actions';
-import { UserState } from '../state/todo.reducers';
-import { getUsers } from '../state/todo.selectors';
+} from '../state/user.actions';
+import { UserState } from '../state/user.reducers';
+import { getUsers } from '../state/user.selectors';
 
 export interface User {
   id: number;

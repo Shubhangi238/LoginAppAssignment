@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { TodoService } from '../todo.service';
+import { UserService } from '../user.service';
 import {
   AddUser,
   AddUserFailure,
@@ -12,19 +12,19 @@ import {
   GetUserFailure,
   GetUserSuccess,
   UserActionTypes,
-} from './todo.actions';
+} from './user.actions';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Injectable()
-export class TodoEffects {
-  constructor(private todoService: TodoService, private actions: Actions) {}
+export class UserEffects {
+  constructor(private userService: UserService, private actions: Actions) {}
 
   public getUsers = createEffect(() => {
     return this.actions.pipe(
       ofType<GetUser>(UserActionTypes.GET_USER),
       mergeMap(() => {
-        return this.todoService.getUsers().pipe(
+        return this.userService.getUsers().pipe(
           map((users) => new GetUserSuccess({ users })),
           catchError(() => of(new GetUserFailure()))
         );
@@ -36,7 +36,7 @@ export class TodoEffects {
     return this.actions.pipe(
       ofType<AddUser>(UserActionTypes.ADD_USER),
       mergeMap(async (action) => {
-        return this.todoService
+        return this.userService
           .addUser(action.payload.user)
           .then(() => new AddUserSuccess())
           .catch(() => new AddUserFailure());
@@ -48,7 +48,7 @@ export class TodoEffects {
     return this.actions.pipe(
       ofType<DeleteUser>(UserActionTypes.DELETE_USER),
       mergeMap(async (action) => {
-        return this.todoService
+        return this.userService
           .deleteUser(action.payload.userId)
           .then(() => new DeleteUserSuccess())
           .catch(() => new DeleteUserFailure());
