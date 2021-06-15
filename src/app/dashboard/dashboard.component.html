@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row header">
+        <div class="col-md-8 header-label-1">Welcome to Employe Manager Dashboard</div>
+        <div class="col-md-4"><button class="logout-btn" type="submit" (click)="logout()">LOGOUT</button></div>
+    </div><br>
+    <div class="grid-container">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let employe of employees">
+                <div class="employe-card">
+                    <div class="employe-card-header">
+                        USER DETAILS 
+                        <div><i class="far fa-angry"></i></div>
+                    </div>
+                    <div class="employe-card-body">
+                        <ul style="list-style-type:none; padding-top: 15px;">
+                            <li>USERNAME : {{employe.name}}</li>
+                            <li>PROFILE : {{employe.profile}}</li>
+                            <li>PLACE : {{employe.place}}</li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

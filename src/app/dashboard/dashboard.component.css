@@ -1,0 +1,89 @@
+@media (min-width: 1200px){
+    .container {
+        max-width: 95%;
+    }
+}
+
+.header {
+    padding: 15px;
+    background: #19334d;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.header-label-1 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+
+.add-new-button {
+    float: right;
+    cursor: pointer;
+    width: 75px;
+    height: 25px;
+    border: none;
+    border-radius: 4px;
+}    
+
+.search-row {
+    margin-top: 20px;
+}
+
+.search-box {
+    border-radius: 15px;
+    border: 1.5px solid #ccc;
+    font-size: 13px;
+    padding: 3px;
+    padding-left: 10px;
+    background: #f2f2f2;
+}
+
+.view {
+    float: right;
+    font-size: 13px;
+    color: #666666;
+}
+
+.padding-left-zero {
+    padding-left: 0%;
+}
+
+.padding-right-zero {
+    padding-right: 0%;
+}
+
+.employe-card {
+    background: #ccc;
+    height: 210px;
+    border-radius: 4px;
+}
+
+.employe-card-header {
+    background: #089191;
+    border-radius: 4px 4px 0 0;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.employe-card-body {
+    background: #19334d;
+    color: white;
+    height: 81%;
+    border-radius: 0 0 4px 4px;
+}
+
+ul > li {
+    padding: 12px;
+}
+
+.logout-btn {
+    float: right;
+    border: none;
+    border-radius: 20px;
+    padding: 7px 15px;
+    cursor: pointer;
+    background-color: white;
+}

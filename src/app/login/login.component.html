@@ -1,0 +1,33 @@
+<div
+  class="jumbotron h-screen w-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center p-4"
+>
+  <div class="container">
+    <h1>Login App</h1>
+
+  <form [formGroup]="loginform" (ngSubmit)="onLogin()">
+      <div class="form-group form-margin">
+        <input type="email" class="form-control form-group-padding" [ngClass]="{ 'invalid': submitted && email.errors }" placeholder="Email" name="email" formControlName="email" required>
+      </div>
+      <div *ngIf="submitted && email.errors" class="is-invalid">
+          <div *ngIf="email.errors?.required">Email is required.</div>
+          <div *ngIf="email.errors?.email">Email must be a valid email address</div>
+      </div>
+
+
+      <div class="form-group form-margin">
+        <input type="password" class="form-control form-group-padding" [ngClass]="{ 'invalid': submitted && password.errors }" placeholder="Password" name="password" formControlName="password" required>
+      </div>
+
+      <div *ngIf="submitted && password.errors" class="is-invalid">
+          <div *ngIf="password.errors?.required">Password is required.</div>
+          <div *ngIf="password.errors?.minlength || password.errors?.maxlength">Password must be 6-20 characters long.</div>
+      </div>
+          
+      <div class="form-group form-margin">
+        <button type="submit" class="btn btn-primary form-group-padding" style="width: 100%" > LOGIN </button>
+      </div>
+
+  </form>
+
+  </div>
+</div>
