@@ -14,7 +14,7 @@ describe('DashboardComponent', () => {
   let fixture: ComponentFixture<DashboardComponent>;
   RouterTestingModule.withRoutes([
     { path: 'login', component: LoginComponent}
-  ])
+  ]);
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

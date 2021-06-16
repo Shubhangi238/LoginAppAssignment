@@ -60,7 +60,7 @@ export class DeleteUserFailure implements Action {
   readonly type = UserActionTypes.DELETE_USER_FAILURE;
 }
 
-export type UserActions = 
+export type UserActions =
   | AddUser
   | AddUserSuccess
   | AddUserFailure

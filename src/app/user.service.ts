@@ -17,7 +17,7 @@ export class UserService {
   async addUser(user: string): Promise<void> {
     const newUser: User = {
       id: this.users.length,
-      user: user
+      user
     };
 
     this.users = [...this.users, newUser];

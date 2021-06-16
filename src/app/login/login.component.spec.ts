@@ -37,15 +37,15 @@ describe('LoginComponent', () => {
   });
 
   it('should check login form status as VALID', () => {
-    component.loginform.controls['email'].setValue('xyz@gmail.com');
-    component.loginform.controls['password'].setValue('1234567');
+    component.loginform.controls.email.setValue('xyz@gmail.com');
+    component.loginform.controls.password.setValue('1234567');
     component.onLogin();
     expect(component.loginform.status).toEqual('VALID');
   });
 
   it('should check login form status as INVALID', () => {
-    component.loginform.controls['email'].setValue('xyz');
-    component.loginform.controls['password'].setValue('123');
+    component.loginform.controls.email.setValue('xyz');
+    component.loginform.controls.password.setValue('123');
     component.onLogin();
     expect(component.loginform.status).toEqual('INVALID');
   });

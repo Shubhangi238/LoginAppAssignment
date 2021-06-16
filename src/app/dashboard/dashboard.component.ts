@@ -12,7 +12,7 @@ import { getUsers } from '../state/user.selectors';
 
 export interface User {
   id: number;
-  user:string;
+  user: string;
 }
 
 @Component({
@@ -24,11 +24,11 @@ export class DashboardComponent implements OnInit {
   employees: any[] = [];
   username: any;
   public users: Observable<User[]>;
-  userData:any;
+  userData: any;
   email: any;
 
   constructor(private router: Router,
-    private userStore: Store<UserState>) { }
+              private userStore: Store<UserState>) { }
 
   ngOnInit(): void {
     this.userStore.dispatch(new GetUser());

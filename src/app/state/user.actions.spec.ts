@@ -7,14 +7,14 @@ describe('Store > UserActionTypes', () => {
   });
 
   it('should create a GerUserSuccess action containing a payload', () => {
-    const payload ={
-        "users": [
+    const payload = {
+        users: [
             {
-                "id": 0,
-                "user": "abc@fandango.com"
+                id: 0,
+                user: 'abc@fandango.com'
             }
         ]
-    }
+    };
     const action = new Actions.GetUserSuccess(payload);
     expect({ ...action }).toEqual({
       type: Actions.UserActionTypes.GET_USER_SUCCESS,
@@ -46,5 +46,5 @@ describe('Store > UserActionTypes', () => {
     const action = new Actions.DeleteUserFailure();
     expect(action.type).toEqual('[DELETE_USER] FAILURE');
   });
-  
+
 });

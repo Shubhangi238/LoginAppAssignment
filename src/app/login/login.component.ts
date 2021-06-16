@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 
 export interface User {
   id: number;
-  user:string;
+  user: string;
 }
 
 @Component({
@@ -50,10 +50,10 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     this.submitted = true;
-    if(this.loginform.status === 'VALID') {
-      localStorage.setItem("username", this.loginform.value.email);
+    if (this.loginform.status === 'VALID') {
+      localStorage.setItem('username', this.loginform.value.email);
       const user: string = this.loginform.value.email;
-      this.userStore.dispatch(new AddUser({ user: user }));
+      this.userStore.dispatch(new AddUser({ user }));
       this.userStore.dispatch(new GetUser());
       this.router.navigateByUrl('/dashboard');
     }
