@@ -34,7 +34,6 @@ export class DashboardComponent implements OnInit {
     this.userStore.dispatch(new GetUser());
     this.users = this.userStore.select(getUsers);
     this.userStore.select(getUsers).subscribe(data => this.userData = data);
-    console.log('this.userData', this.userData);
     this.email = this.userData[0]?.user;
     this.username = this.email?.substring(0, this.email.indexOf('@'));
     this.employees = [{
@@ -44,7 +43,7 @@ export class DashboardComponent implements OnInit {
     }];
   }
 
-  logout() {
+  logout(): void {
     this.userStore.dispatch(new DeleteUser({ userId: this.userData[0]?.id }));
     this.router.navigateByUrl('/login');
   }

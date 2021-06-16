@@ -44,11 +44,11 @@ export class LoginComponent implements OnInit {
     this.users = this.userStore.select(getUsers);
   }
 
-  get email() { return this.loginform.get('email')!; }
+  get email(): any { return this.loginform.get('email'); }
 
-  get password() { return this.loginform.get('password')!; }
+  get password(): any { return this.loginform.get('password'); }
 
-  onLogin() {
+  onLogin(): void {
     this.submitted = true;
     if (this.loginform.status === 'VALID') {
       localStorage.setItem('username', this.loginform.value.email);
