@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { UserService } from '../user.service';
 import {
-  AddUser,
-  AddUserFailure,
-  AddUserSuccess,
-  DeleteUser,
-  DeleteUserFailure,
-  DeleteUserSuccess,
+  Login,
+  LoginSuccess,
+  LoginFailure,
+  Logout,
+  LogoutFailure,
+  LogoutSuccess,
   GetUser,
   GetUserFailure,
   GetUserSuccess,
@@ -32,26 +32,26 @@ export class UserEffects {
     );
   });
 
-  public addUser = createEffect(() => {
+  public login = createEffect(() => {
     return this.actions.pipe(
-      ofType<AddUser>(UserActionTypes.ADD_USER),
+      ofType<Login>(UserActionTypes.LOGIN),
       mergeMap(async (action) => {
         return this.userService
-          .addUser(action.payload.user)
-          .then(() => new AddUserSuccess())
-          .catch(() => new AddUserFailure());
+          .login(action.payload.user)
+          .then(() => new LoginSuccess())
+          .catch(() => new LoginFailure());
       })
     );
   });
 
-  public deleteUser = createEffect(() => {
+  public logout = createEffect(() => {
     return this.actions.pipe(
-      ofType<DeleteUser>(UserActionTypes.DELETE_USER),
+      ofType<Logout>(UserActionTypes.LOGOUT),
       mergeMap(async (action) => {
         return this.userService
-          .deleteUser(action.payload.userId)
-          .then(() => new DeleteUserSuccess())
-          .catch(() => new DeleteUserFailure());
+          .logout(action.payload.userId)
+          .then(() => new LogoutSuccess())
+          .catch(() => new LogoutFailure());
       })
     );
   });

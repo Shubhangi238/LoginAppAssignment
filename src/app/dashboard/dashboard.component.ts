@@ -3,8 +3,8 @@ import {Router} from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import {
-  AddUser,
-  DeleteUser,
+  Login,
+  Logout,
   GetUser,
 } from '../state/user.actions';
 import { UserState } from '../state/user.reducers';
@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
               private userStore: Store<UserState>) { }
 
   ngOnInit(): void {
-    this.userStore.dispatch(new GetUser());
+    //this.userStore.dispatch(new GetUser());
     this.users = this.userStore.select(getUsers);
     this.userStore.select(getUsers).subscribe(data => this.userData = data);
     this.email = this.userData[0]?.user;
@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
   }
 
   logout(): void {
-    this.userStore.dispatch(new DeleteUser({ userId: this.userData[0]?.id }));
+    this.userStore.dispatch(new Logout({ userId: this.userData[0]?.id }));
     this.router.navigateByUrl('/login');
   }
 

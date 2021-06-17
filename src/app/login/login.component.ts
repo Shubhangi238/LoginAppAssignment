@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import {
-  AddUser,
-  DeleteUser,
+  Login,
+  Logout,
   GetUser,
 } from '../state/user.actions';
 import { UserState } from '../state/user.reducers';
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userStore.dispatch(new GetUser());
+    //this.userStore.dispatch(new GetUser());
     this.loginform = this.formBuilder.group({
       email: ['', Validators.email],
       password: ['', [Validators.minLength(6), Validators.maxLength(20)]]
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     if (this.loginform.status === 'VALID') {
       localStorage.setItem('username', this.loginform.value.email);
       const user: string = this.loginform.value.email;
-      this.userStore.dispatch(new AddUser({ user }));
+      this.userStore.dispatch(new Login({ user }));
       this.userStore.dispatch(new GetUser());
       this.router.navigateByUrl('/dashboard');
     }

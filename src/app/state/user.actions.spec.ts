@@ -27,24 +27,24 @@ describe('Store > UserActionTypes', () => {
     expect(action.type).toEqual('[GET_USER] FAILURE');
   });
 
-  it('should create a AddUserSuccess action', () => {
-    const action = new Actions.AddUserSuccess();
-    expect(action.type).toEqual('[ADD_USER] SUCCESS');
+  it('should create a LoginSuccess action', () => {
+    const action = new Actions.LoginSuccess();
+    expect(action.type).toEqual('[LOGIN] SUCCESS');
   });
 
-  it('should create a AddUserFailure action', () => {
-    const action = new Actions.AddUserFailure();
-    expect(action.type).toEqual('[ADD_USER] FAILURE');
+  it('should create a LoginFailure action', () => {
+    const action = new Actions.LoginFailure();
+    expect(action.type).toEqual('[LOGIN] FAILURE');
   });
 
-  it('should create a DeleteUserSuccess action', () => {
-    const action = new Actions.DeleteUserSuccess();
-    expect(action.type).toEqual('[DELETE_USER] SUCCESS');
+  it('should create a LogoutSuccess action', () => {
+    const action = new Actions.LogoutSuccess();
+    expect(action.type).toEqual('[LOGOUT] SUCCESS');
   });
 
-  it('should create a DeleteUserFailure action', () => {
-    const action = new Actions.DeleteUserFailure();
-    expect(action.type).toEqual('[DELETE_USER] FAILURE');
+  it('should create a LogoutFailure action', () => {
+    const action = new Actions.LogoutFailure();
+    expect(action.type).toEqual('[LOGOUT] FAILURE');
   });
 
 });

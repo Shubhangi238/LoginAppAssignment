@@ -38,23 +38,23 @@ export function userReducer(
       return { ...state, loading: false, error: 'XXX' };
     }
 
-    case UserActionTypes.ADD_USER: {
+    case UserActionTypes.LOGIN: {
       return { ...state, loading: true };
     }
-    case UserActionTypes.ADD_USER_SUCCESS: {
+    case UserActionTypes.LOGIN_SUCCESS: {
       return { ...state, loading: false };
     }
-    case UserActionTypes.ADD_USER_FAILURE: {
+    case UserActionTypes.LOGIN_FAILURE: {
       return { ...state, loading: false, error: 'XXX' };
     }
 
-    case UserActionTypes.DELETE_USER: {
+    case UserActionTypes.LOGOUT: {
       return { ...state, loading: true };
     }
-    case UserActionTypes.DELETE_USER_SUCCESS: {
+    case UserActionTypes.LOGOUT_SUCCESS: {
       return { ...state, loading: false };
     }
-    case UserActionTypes.DELETE_USER_FAILURE: {
+    case UserActionTypes.LOGOUT_FAILURE: {
       return { ...state, loading: false, error: 'XXX' };
     }
 
